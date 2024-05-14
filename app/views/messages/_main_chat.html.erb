@@ -100,12 +100,12 @@
   </div>
 </div>
 <div class="chatview_form_block">
-  <form class="message_form">
-    <input type="text" placeholder="type a message" name="massage" class="message_input">
-    <label class="form-image">
-      <span class="image-file">画像</span>
-      <input type="file" class="hidden">
-    </label>
-  </form>
-      <input type="submit" value="送信" class="send_btn">
+    <%= form_with model: [@room, @message], html: {class: "message_form"}, local: true do |f|%>
+     <%= f.text_field :content, class: 'message_input', placeholder: 'type a message' %>
+      <label class="form-image">
+        <span class="image-file">画像</span>
+        <%= f.file_field :image, class: 'hidden' %>
+      </label>
+      <%= f.submit '送信', class: 'send_btn' %>
+    <%end%>
 </div>
