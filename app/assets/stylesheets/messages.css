@@ -103,7 +103,9 @@
 .hidden {
   display: none;
 }
-
+.field_with_errors{
+  width: 100%;
+}
 /* ----side_bar----- */
 .sidebar_container{
   width: 300px;
